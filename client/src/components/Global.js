@@ -29,7 +29,6 @@ const Global = () => {
 
     return (
         <div>
-            <h2>Global Stats</h2>
             New Confirmed:      { NewConfirmed }
             <br/>
             Total Confirmed:    { TotalConfirmed }
