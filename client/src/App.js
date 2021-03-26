@@ -29,12 +29,16 @@ function App() {
       {/* Global Stats */}
       <div className="global-container">
         <div className="container">
-          <Title level={1}>Worldwide Stats</Title>
+          <Title level={1} className="header-section">Worldwide Data</Title>
           <Global />
         </div>
       </div>
-      <div className="container">
-        <Countries />
+      {/* Sorted Stats */}
+      <div className="topCountries-container">
+        <div className="container">
+        <Title level={1} className="header-section">Sorted Data</Title>
+          <Countries />
+        </div>
       </div>
     </ApolloProvider>
   );
