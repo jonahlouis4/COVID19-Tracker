@@ -27,18 +27,27 @@ const Global = () => {
     
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error :(</p>;
-
+    
+    /** Store each QUERY */
     const { NewConfirmed, TotalConfirmed, NewDeaths, TotalDeaths,
         NewRecovered, TotalRecovered, Date } = data.summary.Global;
-
+    
+    /** Titles for each QUERY */
     const titles = [
         "New Cases Confirmed", "Total Cases Confirmed", "Recent Deaths",
         "Total Deaths", "Recent Recoveries", "Total Recoveries"
     ]
 
+    /**
+     * Card display for each category
+     * @param {*} props - title for name of category, and value for the value of category
+     * @returns - the whole column
+     */
     const DiplayCard = props => (
-            <Col span={8}>
-                <Card>
+            <Col xs={24} sm={12} md={8} lg={8} xl={8}>
+                <Card
+                hoverable={true}
+                >
                     <Statistic
                         title={props.title}
                         value={props.value}
