@@ -1,5 +1,9 @@
 import React from 'react'
 import { useQuery, gql } from '@apollo/client'
+import Statistic from 'antd/lib/statistic';
+import Card from 'antd/lib/card';
+import Row from 'antd/lib/row';
+import Col from 'antd/lib/col';
 
 /** Queries all the global stats */
 const GLOBAL_QUERY = gql`
@@ -24,22 +28,54 @@ const Global = () => {
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error :(</p>;
 
-    const { NewConfirmed, TotalConfirmed, NewDeaths, NewRecovered, 
-        TotalRecovered, Date } = data.summary.Global;
+    const { NewConfirmed, TotalConfirmed, NewDeaths, TotalDeaths,
+        NewRecovered, TotalRecovered, Date } = data.summary.Global;
+
+    const titles = [
+        "New Cases Confirmed", "Total Cases Confirmed", "Recent Deaths",
+        "Total Deaths", "Recent Recoveries", "Total Recoveries"
+    ]
+
+    const DiplayCard = props => (
+            <Col span={8}>
+                <Card>
+                    <Statistic
+                        title={props.title}
+                        value={props.value}
+                        // valueStyle={{ color: '#3f8600' }}
+                    />
+                </Card>
+            </Col>
+    )
 
     return (
-        <div>
-            New Confirmed:      { NewConfirmed }
-            <br/>
-            Total Confirmed:    { TotalConfirmed }
-            <br/>
-            New Deaths:         { NewDeaths }
-            <br/>
-            New NewRecovered:   { NewRecovered }
-            <br/>
-            TotalRecovered:     { TotalRecovered }
-            <br/>
-            Date:               { Date }
+        <div className="card-container">
+            <Row gutter={[16, 16]}>
+                <DiplayCard
+                    title={titles[0]}
+                    value={NewConfirmed}
+                />
+                <DiplayCard
+                    title={titles[1]}
+                    value={TotalConfirmed}
+                />
+                <DiplayCard
+                    title={titles[2]}
+                    value={NewDeaths}
+                />
+                <DiplayCard
+                    title={titles[3]}
+                    value={TotalDeaths}
+                />
+                <DiplayCard
+                    title={titles[4]}
+                    value={NewRecovered}
+                />
+                <DiplayCard
+                    title={titles[5]}
+                    value={TotalRecovered}
+                />
+            </Row>
         </div>
     )
 }
