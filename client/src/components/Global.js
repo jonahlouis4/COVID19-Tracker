@@ -1,5 +1,6 @@
 import React from 'react'
 import { useQuery, gql } from '@apollo/client'
+import Typography from 'antd/lib/typography'
 import Statistic from 'antd/lib/statistic';
 import Spin from 'antd/lib/spin';
 import Card from 'antd/lib/card';
@@ -27,13 +28,16 @@ const GLOBAL_QUERY = gql`
 /** Contains the loading icon */
 const loadingIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
+/** Text component of antd's Typograph */
+const { Text } = Typography;
+
 const Global = () => {
     const { loading, error, data } = useQuery(GLOBAL_QUERY);
     
     // API QUERY is loading
     if (loading) return <Row justify="center"><Spin indicator={loadingIcon} /></Row>     
     // API QUERY failed to load or fetch
-    if (error) return <p>Error :(</p>;
+    if (error) return   <Text type="danger">Failed to fetch API.</Text>;
     
     /** Store each QUERY */
     const { NewConfirmed, TotalConfirmed, NewDeaths, TotalDeaths,

@@ -1,10 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import Select from 'antd/lib/select'
-import Row from 'antd/lib/row'
 import Col from 'antd/lib/col'
-import { Column } from '@antv/g2plot'
-import { dataToDataProps, dataPropsToAdvices, 
-    adviceToLibConfig, g2plotRender } from '@antv/chart-advisor';
 import { autoChart } from '@antv/chart-advisor';
 
 const { Option } = Select;

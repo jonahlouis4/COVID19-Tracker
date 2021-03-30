@@ -1,6 +1,11 @@
 import React from 'react'
 import { gql, useQuery } from '@apollo/client'
 import TopCountries from './TopCountries'
+import Typography from 'antd/lib/typography'
+import Spin from 'antd/lib/spin';
+import Row from 'antd/lib/row';
+import message from 'antd/lib/message'
+import LoadingOutlined from '@ant-design/icons/LoadingOutlined';
 
 /** Queries all the country stats */
 const COUNTRY_QUERY = gql`
@@ -21,12 +26,25 @@ const COUNTRY_QUERY = gql`
     }
 `;
 
+/** Contains the loading icon */
+const loadingIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
+
+/** Text component of antd's Typograph */
+const { Text } = Typography;
+
+/** Error message when API QUERY fetch fails */
+const msgError = () => {
+    message.error('API may be down. Please refresh the web page in 2-3 minutes.');
+}
+
 const Countries = () => {  
     const { loading, error, data } = useQuery(COUNTRY_QUERY);
     const COUNTRIES = []
 
-    if (loading) return <p>Loading...</p>
-    if (error) return <p>Error :(</p>;
+    // API QUERY is loading
+    if (loading) return <Row justify="center"><Spin indicator={loadingIcon} /></Row>  
+    // API QUERY failed to load or fetch
+    if (error) return <><Text type="danger">Failed to fetch API.</Text>; {msgError()} </>
     
     /**
      * Adds all countries to the local JSON 'topCountries'
