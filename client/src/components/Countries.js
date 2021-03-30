@@ -43,6 +43,7 @@ const Countries = () => {
         })
     }
     
+    /** Maps through the QUERY and calls the function addCountry() */
     data.summary.Countries.map(( 
         {ID, Country, NewConfirmed, TotalConfirmed, NewDeaths,
         TotalDeaths, NewRecovered, TotalRecovered, Date }) => (
