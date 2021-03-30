@@ -32,7 +32,7 @@ const TopCountries = ({COUNTRIES}) => {
       }, [data]);
 
     return (
-        <>
+        <div className="sorted-chart-container">
             <Select
             value={data}
             onChange={(e) => {
@@ -46,7 +46,7 @@ const TopCountries = ({COUNTRIES}) => {
             <Col span={24}>
                 <div id="column_graph" />
             </Col> 
-        </>
+        </div>
     )
     
     /**
