@@ -23,7 +23,7 @@ const COUNTRY_QUERY = gql`
 
 const Countries = () => {  
     const { loading, error, data } = useQuery(COUNTRY_QUERY);
-    const Countries = []
+    const COUNTRIES = []
 
     if (loading) return <p>Loading...</p>
     if (error) return <p>Error :(</p>;
@@ -36,14 +36,14 @@ const Countries = () => {
      */
     const addCountry = (ID, Country, NewConfirmed, TotalConfirmed, NewDeaths,
         TotalDeaths, NewRecovered, TotalRecovered, Date) => {
-        Countries.push({
+        COUNTRIES.push({
             "ID":ID, "Country":Country, "NewCases":NewConfirmed, "Cases":TotalConfirmed, "RecentDeaths":NewDeaths,
             "TotalDeaths":TotalDeaths, "NewRecovered":NewRecovered, "TotalRecovered":TotalRecovered,
             "Date":Date       
         })
     }
     
-    const FindCountryMostCases = data.summary.Countries.map(( 
+    data.summary.Countries.map(( 
         {ID, Country, NewConfirmed, TotalConfirmed, NewDeaths,
         TotalDeaths, NewRecovered, TotalRecovered, Date }) => (
             addCountry(ID, Country, NewConfirmed, TotalConfirmed, NewDeaths,
@@ -52,7 +52,7 @@ const Countries = () => {
 
     return (
         <>
-            <TopCountries COUNTRIES={Countries} />
+            <TopCountries COUNTRIES={COUNTRIES} />
         </>
         
     )
