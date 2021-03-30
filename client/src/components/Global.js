@@ -1,9 +1,11 @@
 import React from 'react'
 import { useQuery, gql } from '@apollo/client'
 import Statistic from 'antd/lib/statistic';
+import Spin from 'antd/lib/spin';
 import Card from 'antd/lib/card';
 import Row from 'antd/lib/row';
 import Col from 'antd/lib/col';
+import LoadingOutlined from '@ant-design/icons/LoadingOutlined';
 
 /** Queries all the global stats */
 const GLOBAL_QUERY = gql`
@@ -22,10 +24,15 @@ const GLOBAL_QUERY = gql`
     }
 `;
 
+/** Contains the loading icon */
+const loadingIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
+
 const Global = () => {
     const { loading, error, data } = useQuery(GLOBAL_QUERY);
     
-    if (loading) return <p>Loading...</p>
+    // API QUERY is loading
+    if (loading) return <Row justify="center"><Spin indicator={loadingIcon} /></Row>     
+    // API QUERY failed to load or fetch
     if (error) return <p>Error :(</p>;
     
     /** Store each QUERY */
