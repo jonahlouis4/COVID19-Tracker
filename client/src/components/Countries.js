@@ -1,6 +1,7 @@
 import React from 'react'
 import { gql, useQuery } from '@apollo/client'
 import TopCountries from './TopCountries'
+
 import Typography from 'antd/lib/typography'
 import Spin from 'antd/lib/spin';
 import Row from 'antd/lib/row';
@@ -68,7 +69,7 @@ const Countries = () => {
             addCountry(ID, Country, NewConfirmed, TotalConfirmed, NewDeaths,
                 TotalDeaths, NewRecovered, TotalRecovered, Date)
         ));
-
+        
     return (
         <>
             <TopCountries COUNTRIES={COUNTRIES} />

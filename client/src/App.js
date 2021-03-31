@@ -36,8 +36,15 @@ function App() {
       {/* Sorted Stats */}
       <div className="topCountries-container">
         <div className="container">
-        <Title level={1} className="header-section">Sorted Data</Title>
+          <Title level={1} className="header-section">Sorted Data</Title>
           <Countries />
+        </div>
+      </div>
+      {/* By Country Stats */}
+      <div className="byCountry-container">
+        <div className="container">
+        <Title level={1} className="header-section">By Country Data</Title>
+
         </div>
       </div>
     </ApolloProvider>
