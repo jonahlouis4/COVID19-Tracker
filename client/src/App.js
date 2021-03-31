@@ -14,6 +14,11 @@ const client = new ApolloClient({
 });
 
 function App() {
+  /** CONSTANT of the return value that represents <TopCountry>. Used in <Countries>. */
+  const TOP_COUNTRY_RTN = 0;
+  /** CONSTANT of the return value that represents <ByCountry>. Used in <Countries>. */
+  const BY_COUNTRY_RTN = 1;
+
   return (
     <ApolloProvider  client={client}>
       {/* Header */}
@@ -37,16 +42,23 @@ function App() {
       <div className="topCountries-container">
         <div className="container">
           <Title level={1} className="header-section">Sorted Data</Title>
-          <Countries />
+          <Countries 
+            rtnValue={TOP_COUNTRY_RTN} 
+            TOP_COUNTRY_RTN={TOP_COUNTRY_RTN}
+          />
         </div>
       </div>
       {/* By Country Stats */}
       <div className="byCountry-container">
         <div className="container">
         <Title level={1} className="header-section">By Country Data</Title>
-
+        <Countries 
+            rtnValue={BY_COUNTRY_RTN} 
+            TOP_COUNTRY_RTN={TOP_COUNTRY_RTN}
+          />
         </div>
       </div>
+      {/* TODO: Footer here */}
     </ApolloProvider>
   );
 }

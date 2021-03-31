@@ -1,6 +1,7 @@
 import React from 'react'
 import { gql, useQuery } from '@apollo/client'
 import TopCountries from './TopCountries'
+import ByCountry from './ByCountry'
 
 import Typography from 'antd/lib/typography'
 import Spin from 'antd/lib/spin';
@@ -38,7 +39,7 @@ const msgError = () => {
     message.error('API may be down. Please refresh the web page in 2-3 minutes.');
 }
 
-const Countries = () => {  
+const Countries = ({rtnValue, TOP_COUNTRY_RTN}) => {  
     const { loading, error, data } = useQuery(COUNTRY_QUERY);
     const COUNTRIES = []
 
@@ -69,10 +70,24 @@ const Countries = () => {
             addCountry(ID, Country, NewConfirmed, TotalConfirmed, NewDeaths,
                 TotalDeaths, NewRecovered, TotalRecovered, Date)
         ));
-        
+
+    /**
+     * Returns the proper chart. Either the sorted chart or the by country chart.
+     * @param {rtnValue} props - 0 = TopCountries, 1 = ByCountry
+     * @returns - The proper chart to display
+     */
+    function ChartDisplay(props) {
+        const value = props.rtnValue;
+        if (value === TOP_COUNTRY_RTN) {
+            return <TopCountries COUNTRIES={COUNTRIES} />
+        } else {
+            return <ByCountry />
+        }
+    }
+
     return (
         <>
-            <TopCountries COUNTRIES={COUNTRIES} />
+            <ChartDisplay rtnValue={rtnValue} />
         </>
         
     )
