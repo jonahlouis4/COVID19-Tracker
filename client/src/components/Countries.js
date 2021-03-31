@@ -1,7 +1,7 @@
 import React from 'react'
 import { gql, useQuery } from '@apollo/client'
 import TopCountries from './TopCountries'
-import ByCountry from './ByCountry'
+import SummaryStat from './SummaryStat'
 
 import Typography from 'antd/lib/typography'
 import Spin from 'antd/lib/spin';
@@ -76,22 +76,22 @@ const Countries = ({rtnValue, TOP_COUNTRY_RTN}) => {
     COUNTIRES_COPY = COUNTRIES.slice();
 
     /**
-     * Returns the proper chart. Either the sorted chart or the by country chart.
+     * Returns the proper component. Either the sorted chart or the summary data.
      * @param {rtnValue} props - 0 = TopCountries, 1 = ByCountry
      * @returns - The proper chart to display
      */
-    function ChartDisplay(props) {
+    function ComponentDisplay(props) {
         const value = props.rtnValue;
         if (value === TOP_COUNTRY_RTN) {
             return <TopCountries COUNTRIES={COUNTRIES} />
         } else {
-            return <ByCountry COUNTRIES={COUNTIRES_COPY}/>
+            return <SummaryStat COUNTRIES={COUNTIRES_COPY}/>
         }
     }
 
     return (
         <>
-            <ChartDisplay rtnValue={rtnValue} />
+            <ComponentDisplay rtnValue={rtnValue} />
         </>
         
     )
