@@ -42,6 +42,7 @@ const msgError = () => {
 const Countries = ({rtnValue, TOP_COUNTRY_RTN}) => {  
     const { loading, error, data } = useQuery(COUNTRY_QUERY);
     const COUNTRIES = []
+    let COUNTIRES_COPY = []
 
     // API QUERY is loading
     if (loading) return <Row justify="center"><Spin indicator={loadingIcon} /></Row>  
@@ -71,6 +72,9 @@ const Countries = ({rtnValue, TOP_COUNTRY_RTN}) => {
                 TotalDeaths, NewRecovered, TotalRecovered, Date)
         ));
 
+    // Copy COUNTRIES array into copy    
+    COUNTIRES_COPY = COUNTRIES.slice();
+
     /**
      * Returns the proper chart. Either the sorted chart or the by country chart.
      * @param {rtnValue} props - 0 = TopCountries, 1 = ByCountry
@@ -81,7 +85,7 @@ const Countries = ({rtnValue, TOP_COUNTRY_RTN}) => {
         if (value === TOP_COUNTRY_RTN) {
             return <TopCountries COUNTRIES={COUNTRIES} />
         } else {
-            return <ByCountry />
+            return <ByCountry COUNTRIES={COUNTIRES_COPY}/>
         }
     }
 

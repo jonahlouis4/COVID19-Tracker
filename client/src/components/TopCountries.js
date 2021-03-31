@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Select from 'antd/lib/select'
 import Col from 'antd/lib/col'
 import { autoChart } from '@antv/chart-advisor';
