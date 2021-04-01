@@ -2,6 +2,13 @@ import React from 'react'
 import Row from 'antd/lib/row';
 import DisplayCard from './DisplayCard'
 
+/**
+ * Displays the country 'Summary' stats
+ * @param {Array} COUNTRIES - Array of all the countries in the API of 'summary'
+ * @param {String} COUNTRY_SELECT - Country selected by the user
+ * @param {Array} titles - Strings array containing each category name
+ * @returns 
+ */
 const ByCountry = ({COUNTRIES, COUNTRY_SELECT, titles}) => {
     /** New cases for the country */
     let new_cases;

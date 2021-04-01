@@ -6,7 +6,7 @@ import Col from 'antd/lib/col';
 
 /**
  * Card display for each category
- * @param {Array} title - Strings array containing each category name
+ * @param {String} title - title of the category
  * @param {Int} value - Number value of the category
  * @returns 
  */

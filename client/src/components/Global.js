@@ -29,6 +29,11 @@ const loadingIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 /** Text component of antd's Typograph */
 const { Text } = Typography;
 
+/**
+ * Displays the card display for Worldwide stats
+ * @param {Array} titles - Strings array containing each category name
+ * @returns 
+ */
 const Global = ({titles}) => {
     const { loading, error, data } = useQuery(GLOBAL_QUERY);
     
