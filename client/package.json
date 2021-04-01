@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
+    "build": "craco build && move build ../public",
     "test": "craco test"
   },
   "proxy": "http://localhost:5000",
