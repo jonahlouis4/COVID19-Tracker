@@ -18,7 +18,6 @@ const GLOBAL_QUERY = gql`
                 TotalDeaths
                 NewRecovered
                 TotalRecovered                                                                                                                 
-                Date
             }
         }
     }
@@ -40,7 +39,7 @@ const Global = ({titles}) => {
     
     /** Store each QUERY */
     const { NewConfirmed, TotalConfirmed, NewDeaths, TotalDeaths,
-        NewRecovered, TotalRecovered, Date } = data.summary.Global;
+        NewRecovered, TotalRecovered } = data.summary.Global;
 
     return (
         <div className="card-container">

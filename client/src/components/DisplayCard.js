@@ -6,8 +6,9 @@ import Col from 'antd/lib/col';
 
 /**
  * Card display for each category
- * @param {*} props - title for name of category, and value for the value of category
- * @returns - the whole column
+ * @param {Array} title - Strings array containing each category name
+ * @param {Int} value - Number value of the category
+ * @returns 
  */
 const DisplayCard = ({title, value}) => {
     return (

@@ -3,13 +3,20 @@ import Row from 'antd/lib/row';
 import DisplayCard from './DisplayCard'
 
 const ByCountry = ({COUNTRIES, COUNTRY_SELECT, titles}) => {
+    /** New cases for the country */
     let new_cases;
+    /** Total cases for the country */
     let total_cases;
+    /** Recent deaths for the country */
     let new_deaths;
+    /** Total deaths for the country */
     let total_deaths;
+    /** Recent recoveries for the country */
     let new_recoveries;
+    /** Total recoveries for the country */
     let total_recoveries;
 
+    // Find country selected by user and assign data to local variables
     for (let x = 0; x < COUNTRIES.length; x++) {
         if (COUNTRIES[x].Country === COUNTRY_SELECT) {
             new_cases = COUNTRIES[x].NewCases;

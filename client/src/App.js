@@ -43,7 +43,7 @@ function App() {
       {/* Sorted Stats */}
       <div className="topCountries-container">
         <div className="container">
-          <Title level={1} className="header-section">Sorted Data</Title>
+          <Title level={1} className="header-section">Charted Data</Title>
           <Countries 
             rtnValue={TOP_COUNTRY_RTN} 
             TOP_COUNTRY_RTN={TOP_COUNTRY_RTN}
