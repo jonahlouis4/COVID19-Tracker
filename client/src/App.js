@@ -69,7 +69,7 @@ function App() {
           >
             &#169;2021 Made with <HeartFilled style={{color:'red'}}/> by&nbsp; 
             <a 
-           href="https://github.com/jonahlouis4/COVID19-Tracker"
+           href="https://www.jonahlouis.ca/"
            target="_blank"
            rel="noopener noreferrer"
           >
