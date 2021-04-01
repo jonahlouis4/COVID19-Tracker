@@ -26,7 +26,7 @@ function App() {
       {/* Header */}
       <div className="header-container text-center">
           <Title level={1}>COVID-19 Tracker</Title>
-          <p>A real-time COVID-19 tracker from the&nbsp;
+          <p>A real-time COVID-19 tracker using the&nbsp;
             <a 
             href="https://documenter.getpostman.com/view/10808728/SzS8rjbc#e831c268-9da1-4d86-8b5a-8d7f61910af8"
             target="_blank"
