@@ -69,12 +69,12 @@ function App() {
           >
             &#169;2021 Made with <HeartFilled style={{color:'red'}}/> by&nbsp; 
             <a 
-           href="https://www.jonahlouis.ca/"
-           target="_blank"
-           rel="noopener noreferrer"
-          >
-            Jonah Louis
-          </a>
+              href="https://www.jonahlouis.ca/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+             Jonah Louis
+            </a>
           </Text>
         </div>
       </div>
