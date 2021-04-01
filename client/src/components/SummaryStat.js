@@ -6,6 +6,11 @@ import Select from 'antd/lib/select'
 
 const { Option } = Select;
 
+/**
+ * Allows the user to select the option to view: Either worldwide or a country.
+ * @param {Array} COUNTRIES - Array containing the QUERY information of <Countries>
+ * @returns 
+ */
 const SelectStat = ({COUNTRIES}) => {
     /** Holds the current 'Select' tag */
     const [dataSelect, setSelect] = useState("Worldwide");

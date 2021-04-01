@@ -39,6 +39,12 @@ const msgError = () => {
     message.error('API may be down. Please refresh the web page in 2-3 minutes.');
 }
 
+/**
+ * Returns the appropriate component and passes the QUERY.
+ * @param {Int} rtnValue - either 0 or 1
+ * @param {int} TOP_COUNTRY_RTN - value of 1
+ * @returns 
+ */
 const Countries = ({rtnValue, TOP_COUNTRY_RTN}) => {  
     const { loading, error, data } = useQuery(COUNTRY_QUERY);
     const COUNTRIES = []

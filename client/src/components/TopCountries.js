@@ -5,6 +5,11 @@ import { autoChart } from '@antv/chart-advisor';
 
 const { Option } = Select;
 
+/**
+ * Displays a graph of the selected options 
+ * @param {Array} COUNTRIES - Array containing the QUERY information of <Countries>
+ * @returns 
+ */
 const TopCountries = ({COUNTRIES}) => {
     /** Holds the current 'Select' tag */
     const [data, setData] = useState("Sort by most cases");
