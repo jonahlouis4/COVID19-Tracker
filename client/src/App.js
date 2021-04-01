@@ -1,10 +1,13 @@
 import React from 'react'
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
-import Typography from 'antd/lib/typography'
-import Countries from './components/Countries'
 import './App.less';
 
-const { Title } = Typography;
+import Typography from 'antd/lib/typography'
+import Countries from './components/Countries'
+import GithubOutlined from '@ant-design/icons/GithubOutlined'
+import HeartFilled from '@ant-design/icons/HeartFilled'
+
+const { Title, Text } = Typography;
 
 /** Create Client */
 const client = new ApolloClient({
@@ -50,7 +53,31 @@ function App() {
           />
         </div>
       </div>
-      {/* TODO: Footer here */}
+      {/* Footer */}
+      <div className="footer-container">
+        <div className="container">
+          <a 
+           href="https://github.com/jonahlouis4/COVID19-Tracker"
+           target="_blank"
+           rel="noopener noreferrer"
+          >
+            <GithubOutlined style={{color:'#bfbfbf'}}/>
+          </a>
+          <Text 
+          style={{color:'#bfbfbf',float:'right'}}
+          className="text-right"
+          >
+            &#169;2021 Made with <HeartFilled style={{color:'red'}}/> by&nbsp; 
+            <a 
+           href="https://github.com/jonahlouis4/COVID19-Tracker"
+           target="_blank"
+           rel="noopener noreferrer"
+          >
+            Jonah Louis
+          </a>
+          </Text>
+        </div>
+      </div>
     </ApolloProvider>
   );
 }
