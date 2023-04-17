@@ -11,3 +11,18 @@
 <div align="center">
   <img src="client/src/images/demo.gif" alt="showcase" />
 </div>
+
+---
+
+### How to start
+1.
+```
+npm i
+```
+
+2. 
+```
+npm run dev
+```
+
+3. Will be hosted on `http://localhost:5000/`
