@@ -25,8 +25,6 @@ npm i
 npm run dev
 ```
 
-3.
-
-Will be hosted on `http://localhost:5000/`
+3. Will be hosted on `http://localhost:5000/`
 
 
