@@ -1,4 +1,4 @@
-<p align="center">Currently down</p>
+<p align="center">No longer hosted</p>
 <h1 align="center"><a href="https://covid19-tracker2021.herokuapp.com/">COVID-19 Tracker</a></h1>
 
 <p align="center">
